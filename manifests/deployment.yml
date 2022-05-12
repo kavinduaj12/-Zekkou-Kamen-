@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "cs-fe84"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "cs-fe84"
+  template:
+    metadata:
+      labels:
+        app: "cs-fe84"
+    spec:
+      containers:
+        - name: "cs-fe84"
+          image: "csm17.azurecr.io/cs"
+          ports:
+          - containerPort: 80
